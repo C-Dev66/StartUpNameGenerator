@@ -27,6 +27,7 @@ class RandomWords extends StatefulWidget {
 class _RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18.0);
+  final _saved = <WordPair>{}; //NEW
   @override
   Widget build(BuildContext context) {
     return Scaffold(
