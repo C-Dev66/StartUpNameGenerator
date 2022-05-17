@@ -1,4 +1,4 @@
-<img src="https://github.com/C-Dev66/RSVPGuestbookChatApp/blob/main/screenshots/SideBySide.png" alt="HomePage"/>
+<img src="https://github.com/C-Dev66/StartUpNameGenerator/blob/main/screenshots/StartUpNameGeneratorReview.png" alt="HomePage"/>
 
 # StartUpNameGenerator
 > This multi-platform application(Andoird, iOS, Web) creates a simple app that generates proposed names for a startup company. The user can select and unselect names, saving the best ones. The code lazily generates 10 names at a time. As the user scrolls, more names are generated. There is no limit to how far a user can scroll.
@@ -102,31 +102,54 @@ class _RandomWordsState extends State<RandomWords> {
 
 ```
 
-> Adding security & validation rules cloud.firestore
+> Add interactivity & navigating to the new screen
+```dart
+                  trailing: Icon(
+                    alreadySaved ? Icons.favorite : Icons.favorite_border,
+                    color: alreadySaved ? Colors.red : null,
+                    semanticLabel: alreadySaved ? 'Remove from saved' : 'Save',
+                  ),
+                  onTap: () {
+                    setState(() {
+                      if (alreadySaved) {
+                        _saved.remove(_suggestions[index]);
+                      } else {
+                        _saved.add(_suggestions[index]);
+                      }
+...
+    void _pushSaved(){
+      Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (context) {
+            final tiles = _saved.map(
+              (pair) {
+                return ListTile(
+                  title: Text(
+                    pair.asPascalCase,
+                    style: _biggerFont,
+...
+            return Scaffold(
+              appBar: AppBar(
+                title: const Text('Saved Suggestions'),
+...
 ```
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /guestbook/{entry} {
-      allow read: if request.auth.uid != null;
-      allow write:
-      if request.auth.uid == request.resource.data.userId
-          && "name" in request.resource.data
-          && "text" in request.resource.data
-          && "timestamp" in request.resource.data;
-    }
-  }
-}
+
+>Adding a theme
+```dart
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
 ```
 
 ---
 
 ## Summary
-
-Awesome introduction to Firebase, Cloud Firestore, & Security Rules. Really enjoyed this project and will seek to build more applications with their native database service. All around great experience, the future is bright for Flutter. Glad to be able to partaken in this revolutinary stack. 🤩🫶
+Building this application introduced me to the powerful idea of interactivity. An static application can feel out of grasp to the standard user. However, applying ways to touch and play with the different flow allows for a more immersed experience. Giving the user a whole new way of navigating the app. A powerful tool to keep in someones arsenal. This project serves as a baseline to think how we can make the user feel at home. Not too diffucult but simple enough to grasp at a quick pace.
 
 For more information refer to the official documentation.
 
+- [Flutter Documentation](https://docs.flutter.dev/)
 - [Firebase Documentation](https://firebase.google.com/docs)
 - [Flutterfire](https://firebase.google.com/docs/flutter/setup?platform=ios)
 - [Google's awesome Flutter Youtube channel, Lots of great content here](https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw)
@@ -134,5 +157,5 @@ For more information refer to the official documentation.
 ---
 
 ## Demo
-![HomePage Gif](https://github.com/C-Dev66/RSVPGuestbookChatApp/blob/main/screenshots/DemoGif.gif)
+![HomePage Gif](https://github.com/C-Dev66/StartUpNameGenerator/blob/main/screenshots/StartUpNameGeneratorGIF.gif)
 
