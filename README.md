@@ -35,8 +35,6 @@ Flutter is Google's UI toolkit for building beautiful, natively compiled applica
 	- How to add interactivity to a stateful widget
 	- How to create and navigate to a second screen
 	- How to change the look of an app using themes
-- **Firebase Security** Rules to secure the database.
-
 
 ---
 
