@@ -140,7 +140,7 @@ class _RandomWordsState extends State<RandomWords> {
 ---
 
 ## Summary
-Building this application introduced me to the powerful idea of interactivity. An static application can feel out of grasp to the standard user. However, applying ways to touch and play with the different flow allows for a more immersed experience. Giving the user a whole new way of navigating the app. A powerful tool to keep in someones arsenal. This project serves as a baseline to think how we can make the user feel at home. Not too diffucult but simple enough to grasp at a quick pace.
+Building this application introduced me to the powerful idea of interactivity. An static application can feel out of grasp to the standard user. However, applying ways to touch and play with the different flow allows for a more immersed experience. Giving the user a whole new way of navigating the app. A powerful tool to keep in someones arsenal. This project serves as a baseline to think how we can make the user feel at home. Not too diffucult but simple enough to grasp at a quick pace. Looking forward to the next project!🫡
 
 For more information refer to the official documentation.
 
